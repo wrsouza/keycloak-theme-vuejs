@@ -77,7 +77,18 @@
       "message": {
         "type": <#if displayMessage && message?has_content && (message.type != 'warning' || !isAppInitiatedAction??)>"${message.type}"<#else>""</#if>,
         "sumary": <#if displayMessage && message?has_content && (message.type != 'warning' || !isAppInitiatedAction??)>"${kcSanitize(message.summary)?no_esc}"<#else>""</#if>
-      }
+      },
+      "social": [
+        <#if realm.password && social.providers??>
+          <#list social.providers as p>
+            { 
+              "alias": "${p.alias}",
+              "displayName": "${p.displayName!}",
+              "loginUrl": "${p.loginUrl}"
+            }<#sep>, </#sep>
+          </#list>
+        </#if>
+      ]
     }
   </script>
   <#nested "scripts">

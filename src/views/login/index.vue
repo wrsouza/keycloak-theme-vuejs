@@ -2,7 +2,7 @@
   <layout>
     <h3 class="title">{{ titles.loginAccountTitle }}</h3>
     <div v-if="message.sumary" :class="`alert-${message.type}`">
-      <span v-html="getIcon()"></span>
+      <span v-html="getIcon(env.message.type)"></span>
       <span>{{ message.sumary }}</span>
     </div>
     <form :action="getUrl(urls.loginAction)" method="post">
@@ -22,15 +22,21 @@
           {{ labels.rememberMe }}
         </label>
         <span v-if="permissions.resetPasswordAllowed">
-          <a tabindex="5" :href="getUrl(urls.loginResetCredentials)" class="forgot-password">{{ labels.doForgotPassword }}</a>
+          <a tabindex="4" :href="getUrl(urls.loginResetCredentials)" class="forgot-password">{{ labels.doForgotPassword }}</a>
         </span>
       </div>
       <input type="hidden" name="credentialId" :value="forms.selectedCredential" />
-      <button tabindex="4" type="submit">{{ labels.doLogIn }}</button>
+      <button tabindex="5" type="submit">{{ labels.doLogIn }}</button>
     </form>
     <div class="register" v-if="permissions.password && permissions.registrationAllowed && !permissions.registrationDisabled">
       <span>{{ labels.noAccount }}</span>
       <a :href="getUrl(urls.registration)">{{ labels.doRegister }}</a>
+    </div>
+    <div v-if="social.length" class="social">
+      <a v-for="item in social" :key="item.alias" :href="getUrl(item.loginUrl)">
+        <span v-html="getIcon(item.alias)"></span>
+        <span>{{ item.displayName }}</span>
+      </a>
     </div>
   </layout>
 </template>

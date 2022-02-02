@@ -170,7 +170,7 @@ button[type="submit"] {
   }
 }
 
-.register, .login {
+.register, .login, .social {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -194,3 +194,22 @@ button[type="submit"] {
     }
   }
 }
+
+.social {
+  text-align: center;
+  margin-top: 15px;
+  border-top: 2px solid #eee;
+  padding-top: 15px;
+  
+  i {
+    display: block;
+    font-size: 30px;
+    margin-bottom: 5px;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: none;
+  }
+}
+

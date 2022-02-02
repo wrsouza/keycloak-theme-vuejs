@@ -66,6 +66,12 @@ interface EnvMessage {
   sumary: string
 }
 
+interface EnvSocial {
+  alias: string
+  displayName: string
+  loginUrl: string
+}
+
 interface Environment {
   urls: EnvUrl
   titles: EnvTitle
@@ -74,4 +80,5 @@ interface Environment {
   forms: EnvForm
   validations: EnvValidation
   message: EnvMessage
+  social: EnvSocial[]
 }

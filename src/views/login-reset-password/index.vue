@@ -2,7 +2,7 @@
   <layout>
     <h3 class="title">{{ titles.emailForgotTitle }}</h3>
     <div v-if="message.sumary" :class="`alert-${message.type}`">
-      <span v-html="getIcon()"></span>
+      <span v-html="getIcon(env.message.type)"></span>
       <span>{{ message.sumary }}</span>
     </div>
     <form :action="getUrl(urls.loginAction)" method="post">

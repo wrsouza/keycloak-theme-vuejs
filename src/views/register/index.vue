@@ -2,7 +2,7 @@
   <layout>
     <h3 class="title">{{ titles.registerTitle }}</h3>
     <div v-if="message.sumary" :class="`alert-${message.type}`">
-      <span v-html="getIcon()"></span>
+      <span v-html="getIcon(env.message.type)"></span>
       <span>{{ message.sumary }}</span>
     </div>
     <form :action="getUrl(urls.registrationAction)" method="post">
@@ -33,17 +33,17 @@
       <div class="row">
         <div :class="validations.password ? 'form-group error' : 'form-group'">
           <label for="password">{{ labels.password }}</label>
-          <input tabindex="2" name="password" type="password" autocomplete="off" />
+          <input tabindex="5" name="password" type="password" autocomplete="off" />
           <span>{{ validations.password }}</span>
         </div>
         <div :class="validations.passwordConfirm ? 'form-group error' : 'form-group'">
           <label for="password">{{ labels.passwordConfirm }}</label>
-          <input tabindex="3" name="password-confirm" type="password" autocomplete="off" />
+          <input tabindex="6" name="password-confirm" type="password" autocomplete="off" />
           <span>{{ validations.passwordConfirm }}</span>
         </div>
       </div>
       <input type="hidden" name="credentialId" :value="forms.selectedCredential" />
-      <button tabindex="4" type="submit">{{ labels.doRegister }}</button>
+      <button tabindex="7" type="submit">{{ labels.doRegister }}</button>
     </form>
     <div class="login">
       <a :href="getUrl(urls.login)">{{ labels.backToLogin }}</a>
