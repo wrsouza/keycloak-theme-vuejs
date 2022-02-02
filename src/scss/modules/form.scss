@@ -1,0 +1,196 @@
+.title {
+  margin-bottom: 20px;
+  font-size: 18px;
+  color: $black;
+  text-align: center;
+}
+
+.alert {
+  &-success, &-error, &-warning, &-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 12px;
+    line-height: 20px;
+    margin-bottom: 10px;
+
+    i {
+      font-size: 16px;
+      line-height: 20px;
+    }
+  }
+
+  &-success {
+    color: $green;
+  }
+
+  &-error {
+    color: $red;
+  }
+
+  &-warning {
+    color: $orange;
+  }
+
+  &-info {
+    color: $blue;
+  }
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.form-group {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 15px;
+
+  label {
+    margin-bottom: 2px;
+    font-size: 11px;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+    padding-left: 10px;
+    width: 100%;
+    height: 40px;
+    font-size: 14px;
+    color: $blue;
+    line-height: 40px;
+    border-radius: 3px;
+    border: 1px solid $borderColor;
+    outline: none;
+    background-color: #fff;
+
+    &:focus {
+      border: 1px solid $blue;
+    }
+
+    &:active {
+      border: 1px solid $blue;
+    }
+  }
+
+  &.error {
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      color: #c70000;
+      border: 1px solid #c70000;
+
+      &:focus {
+        border: 1px solid #c70000;
+      }
+
+      &:active {
+        border: 1px solid #c70000;
+      }
+    }
+  }
+
+  i {
+    position: absolute;
+    right: 15px;
+    top: 13px;
+    font-size: 15px;
+    color: #dfe2e6;
+  }
+
+  span {
+    margin-top: 2px;
+    font-size: 11px;
+    color: #c70000;
+  }
+}
+
+.checkbox {  
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 10px;
+
+  label {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    font-size: 12px;
+    line-height: 16px;
+    cursor: pointer;
+  }
+
+  input {
+    width: 16px;
+    height: 16px;
+    line-height: 16px;
+  }
+
+  .forgot-password {
+    font-size: 12px;
+    color: $blue;
+    text-decoration: none;
+
+    &:hover {
+      color: $darkBlue;
+      text-decoration: underline;
+    }
+  
+    &:active {
+      color: $darkBlue;
+    }
+  }
+}
+
+button[type="submit"] {
+  margin-bottom: 15px;
+  width: 100%;
+  font-size: 14px;
+  font-weight: bold;
+  color: $white;
+  outline: none;
+  border-radius: 3px;
+  border: none;
+  background-color: $blue;
+  line-height: 40px;
+  height: 40px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $darkBlue;
+  }
+}
+
+.register, .login {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  font-size: 12px;
+  line-height: 16px;
+
+  a {
+    font-size: 12px;
+    color: $blue;
+    text-decoration: none;
+
+    &:hover {
+      color: $darkBlue;
+      text-decoration: underline;
+    }
+  
+    &:active {
+      color: $darkBlue;
+    }
+  }
+}

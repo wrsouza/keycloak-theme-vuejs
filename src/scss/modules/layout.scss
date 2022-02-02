@@ -1,0 +1,55 @@
+.layout {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+
+  &-box {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: stretch;
+    width: 840px;
+    min-height: 440px;
+    background: #fff;
+    border-radius: 7px;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
+
+    &-img {
+      display: flex;
+      width: 420px;
+      min-height: 100%;
+      background: url('https://unsplash.com/photos/hpjSkU2UYSU/download?ixid=MnwxMjA3fDB8MXxzZWFyY2h8MTN8fGVjb21tZXJjZXx8MHx8fHwxNjQzNzkyMzQw&force=true&w=640');
+      background-position: center;
+      background-size: cover;
+      border-radius: 7px 0 0 7px;
+    }
+
+    &-form {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 420px;
+      min-height: 100%;
+      padding: 30px;
+
+      .logo {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        font-size: 20px;
+        font-weight: bold;
+        color: $darkBlue;
+        text-align: center;
+        margin-bottom: 20px;
+
+        i {
+          font-size: 30px;
+        }
+      }
+    }
+  }
+}

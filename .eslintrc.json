@@ -1,0 +1,48 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "extends": [
+        "plugin:vue/essential",
+        "standard",
+        "prettier/@typescript-eslint"
+    ],
+    "parserOptions": {
+        "ecmaVersion": "latest",
+        "parser": "@typescript-eslint/parser",
+        "sourceType": "module"
+    },
+    "plugins": [
+        "vue",
+        "@typescript-eslint",
+        "prettier"
+    ],
+    "rules": {
+    "prettier/prettier": "error",
+    "max-lines": [
+        "error",
+        { "max": 300, "skipComments": true, "skipBlankLines": true }
+    ],
+    "max-lines-per-function": [
+        "error",
+        { "max": 30, "skipComments": true, "skipBlankLines": true }
+    ],
+    "max-len": ["error", { "code": 120 }],
+    "import/extensions": [
+        "error",
+        "ignorePackages",
+        {
+        "ts": "never",
+        "tsx": "never",
+        "vue": "never",
+        "json": "never"
+        }
+    ]
+    },
+    "settings": {
+    "import/resolver": {
+        "typescript": {}
+    }
+    }
+}
