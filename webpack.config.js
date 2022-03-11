@@ -5,7 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 
-const themeName = 'openfinance'
+const THEME_NAME = 'openfinance'
 const entries = ['login', 'register', 'login-reset-password']
 
 module.exports = (env, argv) => {
@@ -19,7 +19,7 @@ module.exports = (env, argv) => {
       return entryList
     },
     output: {
-      path: path.resolve(__dirname, '..', 'themes', themeName, 'login'),
+      path: path.resolve(__dirname, '..', 'themes', THEME_NAME, 'login'),
       filename: 'resources/js/[name].js',
       publicPath: '/'
     },
@@ -87,7 +87,7 @@ module.exports = (env, argv) => {
         patterns: [
           { 
             from: path.resolve(__dirname, 'src', 'static'),
-            to: path.resolve(__dirname, '..', 'themes', themeName, 'login')
+            to: path.resolve(__dirname, '..', 'themes', THEME_NAME, 'login')
           }
         ]
       })
