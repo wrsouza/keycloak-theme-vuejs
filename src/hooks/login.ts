@@ -16,7 +16,7 @@ export const useLogin = () => {
     return env.labels.email
   }
 
-  const getIcon = (type: string) => {
+  const getIcon = (type: string | undefined) => {
     if (type === 'info') {
       return '<i class="fas fa-info-circle"></i>'
     }
@@ -35,17 +35,24 @@ export const useLogin = () => {
     return '<i></i>'
   }
 
+  const getSumary = (message: string) => {
+    return message.replace(/(&#64;)/g, '@')
+  }
+
   return {
     urls: computed(() => env.urls as EnvUrl),
     titles: computed(() => env.titles as EnvTitle),
     permissions: computed(() => env.permissions as EnvPermission),
     labels: computed(() => env.labels as EnvLabel),
     forms: computed(() => env.forms as EnvForm),
+    user: computed(() => env.user as EnvUser),
     validations: computed(() => env.validations as EnvValidation),
     message: computed(() => env.message as EnvMessage),
     social: computed(() => env.social as EnvSocial[]),
+    instruction: computed(() => env.instruction as EnvInstruction),
     getUrl,
     getUsernameLabel,
-    getIcon
+    getIcon,
+    getSumary
   }
 }

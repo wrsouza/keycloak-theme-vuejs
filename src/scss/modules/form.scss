@@ -6,7 +6,10 @@
 }
 
 .alert {
-  &-success, &-error, &-warning, &-info {
+  &-success,
+  &-error,
+  &-warning,
+  &-info {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -57,9 +60,9 @@
     font-size: 11px;
   }
 
-  input[type="text"],
-  input[type="email"],
-  input[type="password"] {
+  input[type='text'],
+  input[type='email'],
+  input[type='password'] {
     padding-left: 10px;
     width: 100%;
     height: 40px;
@@ -81,9 +84,9 @@
   }
 
   &.error {
-    input[type="text"],
-    input[type="email"],
-    input[type="password"] {
+    input[type='text'],
+    input[type='email'],
+    input[type='password'] {
       color: #c70000;
       border: 1px solid #c70000;
 
@@ -112,7 +115,7 @@
   }
 }
 
-.checkbox {  
+.checkbox {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -144,14 +147,14 @@
       color: $darkBlue;
       text-decoration: underline;
     }
-  
+
     &:active {
       color: $darkBlue;
     }
   }
 }
 
-button[type="submit"] {
+button[type='submit'] {
   margin-bottom: 15px;
   width: 100%;
   font-size: 14px;
@@ -170,7 +173,9 @@ button[type="submit"] {
   }
 }
 
-.register, .login, .social {
+.register,
+.login,
+.social {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -188,7 +193,7 @@ button[type="submit"] {
       color: $darkBlue;
       text-decoration: underline;
     }
-  
+
     &:active {
       color: $darkBlue;
     }
@@ -200,7 +205,7 @@ button[type="submit"] {
   margin-top: 15px;
   border-top: 2px solid #eee;
   padding-top: 15px;
-  
+
   i {
     display: block;
     font-size: 30px;
@@ -213,3 +218,7 @@ button[type="submit"] {
   }
 }
 
+.instruction {
+  margin: 10px auto;
+  text-align: center;
+}

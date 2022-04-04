@@ -1,11 +1,11 @@
 <template>
   <layout>
-    <h3 class="title">{{ titles.registerTitle }}</h3>
+    <h3 class="title">{{ titles.loginProfileTitle }}</h3>
     <div v-if="message.sumary" :class="`alert-${message.type}`">
       <span v-html="getIcon(message.type)"></span>
       <span>{{ message.sumary }}</span>
     </div>
-    <form :action="getUrl(urls.registrationAction)" method="post">
+    <form :action="getUrl(urls.loginAction)" method="post">
       <div class="row">
         <div :class="validations.firstName ? 'form-group error' : 'form-group'">
           <label for="firstName">{{ labels.firstName }}</label>
@@ -13,7 +13,7 @@
             tabindex="1"
             name="firstName"
             type="text"
-            :value="forms.registerFirstName"
+            :value="user.firstName"
             autocomplete="off"
           />
           <span>{{ validations.firstName }}</span>
@@ -24,7 +24,7 @@
             tabindex="2"
             name="lastName"
             type="text"
-            :value="forms.registerLastName"
+            :value="user.lastName"
             autocomplete="off"
           />
           <span>{{ validations.lastName }}</span>
@@ -37,7 +37,7 @@
             tabindex="3"
             name="email"
             type="text"
-            :value="forms.registerEmail"
+            :value="user.email"
             autocomplete="off"
           />
           <span>{{ validations.email }}</span>
@@ -51,48 +51,14 @@
             tabindex="4"
             name="username"
             type="text"
-            :value="forms.registerUsername"
+            :value="user.username"
             autocomplete="off"
           />
           <span>{{ validations.username }}</span>
         </div>
       </div>
-      <div class="row">
-        <div :class="validations.password ? 'form-group error' : 'form-group'">
-          <label for="password">{{ labels.password }}</label>
-          <input
-            tabindex="5"
-            name="password"
-            type="password"
-            autocomplete="off"
-          />
-          <span>{{ validations.password }}</span>
-        </div>
-        <div
-          :class="
-            validations.passwordConfirm ? 'form-group error' : 'form-group'
-          "
-        >
-          <label for="password-confirm">{{ labels.passwordConfirm }}</label>
-          <input
-            tabindex="6"
-            name="password-confirm"
-            type="password"
-            autocomplete="off"
-          />
-          <span>{{ validations.passwordConfirm }}</span>
-        </div>
-      </div>
-      <input
-        type="hidden"
-        name="credentialId"
-        :value="forms.selectedCredential"
-      />
-      <button tabindex="7" type="submit">{{ labels.doRegister }}</button>
+      <button tabindex="5" type="submit">{{ labels.doSubmit }}</button>
     </form>
-    <div class="login">
-      <a :href="getUrl(urls.login)">{{ labels.backToLogin }}</a>
-    </div>
   </layout>
 </template>
 <script lang="ts">
@@ -101,7 +67,7 @@ import Layout from '~/components/Layout.vue'
 import { useLogin } from '~/hooks'
 
 export default defineComponent({
-  name: 'Register',
+  name: 'LoginUpdateProfile',
   components: {
     Layout
   },
@@ -109,7 +75,7 @@ export default defineComponent({
     return useLogin()
   },
   mounted() {
-    console.log('Register')
+    console.log('LoginUpdateProfile')
   }
 })
 </script>

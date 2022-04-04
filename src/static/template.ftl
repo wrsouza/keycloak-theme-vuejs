@@ -25,9 +25,12 @@
         "registrationAction": "${url.registrationAction}"
       },
       "titles": {
+        "loginProfileTitle": "${msg("loginProfileTitle")}",
         "loginAccountTitle": "${msg("loginAccountTitle")}",
         "registerTitle": "${msg("registerTitle")}",
-        "emailForgotTitle": "${msg("emailForgotTitle")}"
+        "emailForgotTitle": "${msg("emailForgotTitle")}",
+        "confirmLinkIdpTitle": "${msg("confirmLinkIdpTitle")}",
+        "emailLinkIdpTitle": "${msg("emailLinkIdpTitle", idpDisplayName)}"
       },
       "permissions": {
         "usernameEditDisabled": <#if usernameEditDisabled??>true<#else>false</#if>,
@@ -54,7 +57,9 @@
         "doSubmit": "${msg("doSubmit")}",
         "noAccount": "${msg("noAccount")}",
         "doRegister": "${msg("doRegister")}",
-        "backToLogin": "${kcSanitize(msg("backToLogin"))?no_esc}"
+        "backToLogin": "${kcSanitize(msg("backToLogin"))?no_esc}",
+        "confirmLinkIdpContinue": "${msg("confirmLinkIdpContinue")}",
+        "doClickHere": "${msg("doClickHere")}"
       },
       "forms": {
         "loginUsername": "${(login.username!'')}",
@@ -64,6 +69,12 @@
         "registerLastName": <#if register??>"${(register.formData.lastName!'')}"<#else>""</#if>,
         "registerEmail": <#if register??>"${(register.formData.email!'')}"<#else>""</#if>,
         "registerUsername": <#if register??>"${(register.formData.username!'')}"<#else>""</#if>
+      },
+      "user": {
+        "username": <#if user??>"${(user.username!'')}"<#else>""</#if>,
+        "email": <#if user??>"${(user.email!'')}"<#else>""</#if>,
+        "firstName": <#if user??>"${(user.firstName!'')}"<#else>""</#if>,
+        "lastName": <#if user??>"${(user.lastName!'')}"<#else>""</#if>
       },
       "validations": {
         "firstName": <#if messagesPerField.existsError('firstName')>"${kcSanitize(messagesPerField.get('firstName'))?no_esc}"<#else>""</#if>,
@@ -77,6 +88,13 @@
       "message": {
         "type": <#if displayMessage && message?has_content && (message.type != 'warning' || !isAppInitiatedAction??)>"${message.type}"<#else>""</#if>,
         "sumary": <#if displayMessage && message?has_content && (message.type != 'warning' || !isAppInitiatedAction??)>"${kcSanitize(message.summary)?no_esc}"<#else>""</#if>
+      },
+      "instruction": {
+        "emailLinkIdp1": "${msg("emailLinkIdp1", idpDisplayName, brokerContext.username, realm.displayName)}",
+        "emailLinkIdp2": "${msg("emailLinkIdp2")}",
+        "emailLinkIdp3": "${msg("emailLinkIdp3")}",
+        "emailLinkIdp4": "${msg("emailLinkIdp4")}",
+        "emailLinkIdp5": "${msg("emailLinkIdp5")}"
       },
       "social": [
         <#if realm.password && social.providers??>

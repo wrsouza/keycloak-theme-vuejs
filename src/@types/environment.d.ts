@@ -7,9 +7,12 @@ interface EnvUrl {
 }
 
 interface EnvTitle {
+  loginProfileTitle: string
   loginAccountTitle: string
   registerTitle: string
   emailForgotTitle: string
+  confirmLinkIdpTitle: string
+  emailLinkIdpTitle: string
 }
 
 interface EnvPermission {
@@ -39,6 +42,8 @@ interface EnvLabel {
   noAccount: string
   doRegister: string
   backToLogin: string
+  confirmLinkIdpContinue: string
+  doClickHere: string
 }
 
 interface EnvForm {
@@ -49,6 +54,13 @@ interface EnvForm {
   registerLastName: string
   registerEmail: string
   registerUsername: string
+}
+
+interface EnvUser {
+  username: string
+  email: string
+  firstName: string
+  lastName: string
 }
 
 interface EnvValidation {
@@ -66,6 +78,14 @@ interface EnvMessage {
   sumary: string
 }
 
+interface EnvInstruction {
+  emailLinkIdp1: string
+  emailLinkIdp2: string
+  emailLinkIdp3: string
+  emailLinkIdp4: string
+  emailLinkIdp5: string
+}
+
 interface EnvSocial {
   alias: string
   displayName: string
@@ -78,7 +98,9 @@ interface Environment {
   permissions: EnvPermission
   labels: EnvLabel
   forms: EnvForm
+  user: EnvUser
   validations: EnvValidation
   message: EnvMessage
   social: EnvSocial[]
+  instruction: EnvInstruction
 }
